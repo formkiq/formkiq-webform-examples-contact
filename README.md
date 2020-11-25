@@ -14,7 +14,7 @@ The FormKiQ Client JavaScript SDK includes an optional auto-wiring function. In 
 
 # Submitting a Form Manually
 
-If you would rather handle the form manually, you can use the FormKiQ Client SDK to access the FormKiQ Core API. You will still receive the same onFormSubmitted and 
+If you would rather handle the form manually, you can use the FormKiQ Client SDK to access the FormKiQ Core API. You will still receive the same onFormSubmitted and onFormCompleted events.
 
 ## Example
 
