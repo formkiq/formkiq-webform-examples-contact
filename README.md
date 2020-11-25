@@ -27,7 +27,7 @@ If you would rather handle the form manually, you can use the FormKiQ Client SDK
     let formkiqClient;
 
     window.onload = () => {
-        formkiqClient = new FormkiqClient('{FormKiQHttpApiUrl}');
+        formkiqClient = new FormkiqClient('{FormkiqHttpApiUrl}');
     }
 
     function submitForm(thisForm) {
