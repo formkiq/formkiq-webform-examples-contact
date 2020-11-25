@@ -8,7 +8,7 @@ This example uses the FormKiQ Client JavaScript SDK: https://www.npmjs.com/packa
 
 # Auto-Wired Forms
 
-The FormKiQ Client SDK includes an optional auto-wiring function. In order to have your form automatically submit to your FormKiQ Core deployment, you can add a className of "fkq-form" to your &lt;form&gt; element. 
+The FormKiQ Client JavaScript SDK includes an optional auto-wiring function. In order to have your form automatically submit to your FormKiQ Core deployment, you can add a className of "fkq-form" to your &lt;form&gt; element. 
 
 **NOTE: Validation has not yet been implemented for auto-wired forms.**
 
