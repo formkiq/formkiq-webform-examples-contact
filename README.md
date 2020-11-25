@@ -2,15 +2,17 @@
 # FormKiQ Webform Examples - Contact Form
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-**Using [FormKiQ Core](https://github.com/formkiq/formkiq-core), you can handle web forms on your site in minutes.**
+This repository contains an example on how to create a simple web form, and save the form's contents to [FormKiQ Core](https://github.com/formkiq/formkiq-core).
 
-This example uses the FormKiQ Client JavaScript SDK: https://www.npmjs.com/package/formkiq-client-sdk-javascript
+This example assume you have [installed FormKiQ](https://github.com/formkiq/formkiq-core#installation) into your AWS account. 
+
+The example uses the FormKiQ Client JavaScript SDK: 
+
+https://www.npmjs.com/package/formkiq-client-sdk-javascript
 
 # Auto-Wired Forms
 
 The FormKiQ Client JavaScript SDK includes an optional auto-wiring function. In order to have your form automatically submit to your FormKiQ Core deployment, you can add a className of "fkq-form" to your &lt;form&gt; element. 
-
-**NOTE: Validation has not yet been implemented for auto-wired forms.**
 
 # Submitting a Form Manually
 
