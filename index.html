@@ -129,11 +129,11 @@
         * In order to auto-wire form or submit to the FormKiQ Core API,
         * you must create an instance of FormkiqClient
         *  
-        * NOTE: you must replace "{FormKiQHttpApiUrl}" with your FormKiQ Core HTTP API URL,
+        * NOTE: you must replace "{FormkiqHttpApiUrl}" with your FormKiQ Core HTTP API URL,
         * which can be found in your CloudFormation Outputs
         * (see https://github.com/formkiq/formkiq-core#ssm-parameter-store)
         */
-        formkiqClient = new FormkiqClient('{FormKiQHttpApiUrl}');
+        formkiqClient = new FormkiqClient('{FormkiqHttpApiUrl}');
       }
 
       /*
