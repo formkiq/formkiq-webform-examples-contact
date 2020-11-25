@@ -125,58 +125,35 @@
       let formkiqClient;
 
       window.onload = () => {
-        formkiqClient = new FormkiqClient('api-demo.tryformkiq.com');
+        /*
+        * In order to auto-wire form or submit to the FormKiQ Core API,
+        * you must create an instance of FormkiqClient
+        *  
+        * NOTE: you must replace "{FormKiQHttpApiUrl}" with your FormKiQ Core HTTP API URL,
+        * which can be found in your CloudFormation Outputs
+        * (see https://github.com/formkiq/formkiq-core#ssm-parameter-store)
+        */
+        formkiqClient = new FormkiqClient('{FormKiQHttpApiUrl}');
       }
 
-      function openFileInput(fileInputId) {
-        var fileInput = document.getElementById(fileInputId);
-        if (fileInput) {
-          fileInput.click();
-        }
-      }
-
-      function displaySelectedFile(fileInput, idPrefix) {
-        var fileName = fileInput.value;
-        if (fileName.indexOf('\\')) {
-          fileName = fileName.substr(fileName.lastIndexOf('\\') + 1);
-        }
-        var selectedFileNameDisplayContainer = document.getElementById(idPrefix + 'SelectedFileText');
-        if (selectedFileNameDisplayContainer) {
-          var selectedFileNameDisplaySpan = Array.from(
-            selectedFileNameDisplayContainer.getElementsByTagName('SPAN')
-          ).shift();
-          selectedFileNameDisplaySpan.innerText = fileName;
-        }
-        var removeButton = document.getElementById(idPrefix + 'RemoveFileButton');
-        var fileInputButtonText = document.getElementById(idPrefix + 'FileInputText');
-        if (removeButton) {
-          if (fileName.length) {
-            removeButton.classList.remove('hidden');
-            if (fileInputButtonText) {
-              fileInputButtonText.innerText = fileInputButtonText.innerText.replace('Upload', 'Replace');
-            }
-          } else {
-            removeButton.classList.add('hidden');
-            if (fileInputButtonText) {
-              fileInputButtonText.innerText = fileInputButtonText.innerText.replace('Replace', 'Upload');
-            }
-          }
-        }
-      }
-
-      function removeSelectedFile(fileInputId, idPrefix) {
-        var fileInput = document.getElementById(fileInputId);
-        if (fileInput) {
-          fileInput.value = '';
-        }
-        displaySelectedFile(fileInput, idPrefix);
+      /*
+      * You can submit the form manually using this function.
+      *
+      * NOTE: if you want to add an onsubmit attribute to your form, be sure to
+      * append "return false;" after your onsubmit code, to prevent the page submitting.
+      */
+      function submitForm(thisForm) {
+        // only needed for manual form submitting
+        formkiqClient.webFormsHandler.submitFormkiqForm(thisForm);
       }
 
       function onFormSubmitted(formName) {
+        // this event is fired when the form has been submitted
         console.log(`${formName} has been submitted for processing.`);
       }
 
       function onFormCompleted(formName, response) {
+        // this event is fired when the form processing has been completed
         console.log(`${formName} has been received and processed. Response below:`);
         console.log(response);
         var responseDiv = document.getElementById('response');
